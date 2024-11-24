@@ -22,9 +22,10 @@ export const getSingleBikeFromDB = async (productId: string) => {
 
 // update bike
 export const updateSingleBikeInDB = async (productId: string, updatedData: Object) => {
-  const result = await productModel.updateOne(
+  const result = await productModel.findOneAndUpdate(
     { _id: new mongoose.Types.ObjectId(productId) },
-    { $set: updatedData }
+    { $set: updatedData },
+    {new: true}
   );
   return result
 };

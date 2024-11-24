@@ -21,9 +21,7 @@ const createOrder = (req, res) => __awaiter(void 0, void 0, void 0, function* ()
             if (product.quantity < quantity) {
                 res.status(500).json({
                     message: "Stock is Not sufficient to Create Your Order",
-                    success: false,
-                    pQuantity: product.quantity,
-                    quantity
+                    success: false
                 });
             }
             else {
@@ -46,6 +44,12 @@ const createOrder = (req, res) => __awaiter(void 0, void 0, void 0, function* ()
                     data: result,
                 });
             }
+        }
+        else {
+            res.send({
+                success: false,
+                message: "Product Not Found"
+            });
         }
     }
     catch (err) {

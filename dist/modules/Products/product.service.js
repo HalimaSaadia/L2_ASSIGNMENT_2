@@ -34,7 +34,7 @@ const getSingleBikeFromDB = (productId) => __awaiter(void 0, void 0, void 0, fun
 exports.getSingleBikeFromDB = getSingleBikeFromDB;
 // update bike
 const updateSingleBikeInDB = (productId, updatedData) => __awaiter(void 0, void 0, void 0, function* () {
-    const result = yield product_model_1.productModel.updateOne({ _id: new mongoose_1.default.Types.ObjectId(productId) }, { $set: updatedData });
+    const result = yield product_model_1.productModel.findOneAndUpdate({ _id: new mongoose_1.default.Types.ObjectId(productId) }, { $set: updatedData }, { new: true });
     return result;
 });
 exports.updateSingleBikeInDB = updateSingleBikeInDB;

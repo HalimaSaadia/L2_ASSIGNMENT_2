@@ -37,7 +37,7 @@ const orderSchema = new mongoose_1.Schema({
     product: {
         type: mongoose_1.default.Schema.Types.ObjectId,
         required: true,
-        ref: "Product"
+        ref: "Product",
     },
     quantity: {
         required: true,
@@ -48,5 +48,5 @@ const orderSchema = new mongoose_1.Schema({
         type: Number,
         required: true,
     },
-});
+}, { timestamps: true });
 exports.orderModel = (0, mongoose_1.model)("Order", orderSchema);

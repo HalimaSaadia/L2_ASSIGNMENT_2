@@ -91,7 +91,7 @@ export const deleteBike = async (req: Request, res: Response) => {
     res.status(200).json({
       message: "Bike Deleted Successfully",
       success: true,
-      data: result,
+      data: {},
     });
   } catch (err) {
     res.status(500).json({

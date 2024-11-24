@@ -99,7 +99,7 @@ const deleteBike = (req, res) => __awaiter(void 0, void 0, void 0, function* () 
         res.status(200).json({
             message: "Bike Deleted Successfully",
             success: true,
-            data: result,
+            data: {},
         });
     }
     catch (err) {
